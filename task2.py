@@ -1,5 +1,6 @@
 import numpy as np
 
+#Визначення функції
 def cum_sum(x, d):
     n = 1
     sum = 0
@@ -12,7 +13,7 @@ def cum_sum(x, d):
 
     return sum
 
-#Табулювання 
+#Табуляція 
 def tab_cumsum(a, b, h, d):
     value_x = np.arange(a, b + h, h)
     res = []
@@ -31,6 +32,7 @@ d = 0.001
 
 res = tab_cumsum(a, b, h, d)
 
+#Вивід результатів
 for x, y in res:
     print(f"x = {x: .3f}, f(x) = {y: .3f}")
 
