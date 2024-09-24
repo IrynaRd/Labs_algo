@@ -1,31 +1,36 @@
-import numpy as np
-import math
+from math import atan, tan, log
 
 #Визначення функцій
 def fun_1(x):
-    return math.atan(1 / x)
+    return atan(1 / x)
 
 def fun_2(x):
-    return math.tan(x + math.log(x, 4))
+    return tan(x + log(x, 4))
 
 def fun_3(x):
-    return 1 / (1 + math.log(x))
+    return 1 / (1 + log(x))
 
 #Табуляція
 def tab_func(a, b, h):
-    value_x = np.arange(a, b + h, h)
     res = []
+    x = round(a, 2)
 
-    for x in value_x:
-        if x < 1:
+    while x <= b:
+        if x < par1:
             y = fun_1(x)
-        elif 1 <= x < 3:
+        elif par1 <= x < par2:
             y = fun_2(x)
         else:
             y = fun_3(x)
         res.append((x, y))
+        x = round(x + h, 2)
     
     return res
+
+
+
+par1 = 1
+par2 = 3
 
 
 h = 0.3
